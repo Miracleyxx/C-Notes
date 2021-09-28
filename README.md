@@ -1,4 +1,4 @@
-# Initial page
+# C++笔记
 
 Record some C++ common skills and grammar.   
 
