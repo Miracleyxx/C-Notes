@@ -1,0 +1,384 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>inline内联函数 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="编码技巧.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    C++笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../C++Code/">
+            
+                <a href="../C++Code/">
+            
+                    
+                    C++编码规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../C++Code/编码规范.html">
+            
+                <a href="../C++Code/编码规范.html">
+            
+                    
+                    编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="READMD.html">
+            
+                <a href="READMD.html">
+            
+                    
+                    C++编码技巧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="编码技巧.html">
+            
+                <a href="编码技巧.html">
+            
+                    
+                    编码技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="inline函数.html">
+            
+                <a href="inline函数.html">
+            
+                    
+                    inline内联函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >inline内联函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="inline&#x5185;&#x8054;&#x51FD;&#x6570;"><code>inline</code>&#x5185;&#x8054;&#x51FD;&#x6570;</h1>
+<h5 id="1&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x4ECB;&#x7ECD;">1&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x4ECB;&#x7ECD;</h5>
+<p>&#x5185;&#x8054;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x4E86;<code>inline</code>&#x4FEE;&#x9970;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code class="lang-C++"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span>
+</span>{
+    <span class="hljs-keyword">return</span> a &gt; b ? a : b;
+}
+</code></pre>
+<h4 id="2&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;">2&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;</h4>
+<p>C++&#x8C03;&#x7528;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li>&#x5C06;&#x53C2;&#x6570;push&#x5230;&#x5806;&#x6808;&#x4E2D;</li>
+<li>&#x5C06;&#x8FD4;&#x56DE;&#x5730;&#x5740;push&#x5230;&#x5806;&#x6808;&#x4E2D;</li>
+<li>&#x51C6;&#x5907;&#x8FD4;&#x56DE;&#x503C;</li>
+<li>&#x5C06;&#x6240;&#x6709;push&#x5230;&#x5806;&#x6808;&#x4E2D;&#x7684;&#x90FD;pop&#x51FA;&#x6765;</li>
+</ul>
+<p><strong>&#x975E;&#x5185;&#x8054;&#x51FD;&#x6570;</strong>&#x8C03;&#x7528;&#x64CD;&#x4F5C;&#x6BEB;&#x65E0;&#x7591;&#x95EE;<strong>&#x589E;&#x52A0;&#x4E86;&#x5EF6;&#x8FDF;</strong>&#xFF0C;&#x6709;<strong>&#x6808;&#x5185;&#x5B58;&#x521B;&#x5EFA;</strong>&#x548C;<strong>&#x91CA;&#x653E;</strong>&#x7684;&#x5F00;&#x9500;&#x3002;&#x800C;&#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5C06;<strong>&#x51FD;&#x6570;&#x5185;&#x5BB9;&#x5D4C;&#x5165;&#x5230;&#x51FD;&#x6570;&#x8C03;&#x7528;</strong>&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x4FDD;&#x6301;&#x7740;<strong>&#x51FD;&#x6570;&#x7684;&#x72EC;&#x7ACB;&#x6027;</strong>&#xFF0C;&#x51FD;&#x6570;&#x8FD8;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x72EC;&#x7ACB;&#x7A7A;&#x95F4;&#xFF0C;&#x7F3A;&#x70B9;&#x662F;<strong>&#x589E;&#x52A0;&#x7A7A;&#x95F4;&#x6D88;&#x8017;</strong>&#xFF08;&#x4EE5;<strong>&#x7A7A;&#x95F4;&#x6362;&#x65F6;&#x95F4;</strong>&#xFF09;&#x3002;</p>
+<p>&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-C++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">int</span> a = <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">int</span> b = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">int</span> c = max(a,b);
+}
+</code></pre>
+<p>&#x4F7F;&#x7528; <code>inline</code> &#x4FEE;&#x9970;&#xFF1A;</p>
+<pre><code class="lang-C++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">int</span> a = <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">int</span> b = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">int</span> c = a &gt; b? a : b;
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4E24;&#x79CD;&#x4EE3;&#x7801;&#x5728;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B9E;&#x9645;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<h5 id="3&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;">3&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;</h5>
+<p><strong>&#x9690;&#x5F0F;&#x5185;&#x8054;</strong>&#xFF1A;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5728;,h&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x5185;&#x8054;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> Demo {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{ <span class="hljs-keyword">return</span> a &gt; b ? a : b;}  <span class="hljs-comment">//demo.h</span>
+};
+</code></pre>
+<p><strong>&#x663E;&#x5F0F;&#x5185;&#x8054;</strong>&#xFF1A;&#x5173;&#x952E;&#x5B57;<code>inline</code> &#x5FC5;&#x987B;&#x4E0E;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4F53;&#x653E;&#x5728;&#x4E00;&#x8D77;&#x624D;&#x80FD;&#x4F7F;&#x51FD;&#x6570;&#x6210;&#x4E3A;&#x5185;&#x8054;&#xFF0C;&#x4EC5;&#x5C06;<code>inline</code> &#x653E;&#x5728;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x524D;&#x9762;&#x4E0D;&#x8D77;&#x4EFB;&#x4F55;&#x4F5C;&#x7528;&#x3002;</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> Demo {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>;
+};
+<span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>{ <span class="hljs-keyword">return</span> a &gt; b ? a : b;}
+</code></pre>
+<p><strong>&#x663E;&#x5F0F;&#x5185;&#x8054;</strong>&#x65F6;&#x58F0;&#x660E;&#x548C;&#x5B9A;&#x4E49;&#x5C3D;&#x91CF;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5426;&#x5219;&#x5FC5;&#x987B;&#x5728;&#x6BCF;&#x4E2A;&#x8C03;&#x7528;&#x6B64;&#x51FD;&#x6570;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x5B9E;&#x73B0;&#x4E00;&#x6B21;&#xFF0C;&#x6700;&#x597D;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A;&#x5B9A;&#x4E49;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x5426;&#x5219;&#xFF0C;&#x5C06;&#x4F1A;&#x5F15;&#x8D77;&#x672A;&#x5B9A;&#x4E49;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5373;&#x662F;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x7684;&#x5B9A;&#x4E49;&#x90FD;&#x4E00;&#x6837;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C55;&#x5F00;&#x7684;&#x662F;&#x54EA;&#x4E00;&#x4E2A;&#xFF0C;&#x90A3;&#x8981;&#x770B;&#x5177;&#x4F53;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x800C;&#x5B9A;&#x3002;&#x6240;&#x4EE5;,&#x6700;&#x597D;&#x5C06;&#x5185;&#x8054;&#x51FD;&#x6570;<strong>&#x5B9A;&#x4E49;&#x653E;&#x5728;&#x5934;&#x6587;&#x4EF6;</strong>&#x4E2D;. </p>
+<h5 id="4&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x548C;&#x5B8F;&#x5B9A;&#x4E49;&#x7684;&#x533A;&#x522B;">4&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x548C;&#x5B8F;&#x5B9A;&#x4E49;&#x7684;&#x533A;&#x522B;</h5>
+<p>&#x5B8F;&#x662F;&#x5728;&#x4EE3;&#x7801;&#x5904;&#x4E0D;&#x52A0;&#x4EFB;&#x4F55;&#x9A8C;&#x8BC1;&#x7684;&#x7B80;&#x5355;&#x66FF;&#x4EE3;&#xFF0C;&#x800C;&#x5185;&#x8054;&#x51FD;&#x6570;&#x662F;&#x5C06;&#x4EE3;&#x7801;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x8C03;&#x7528;&#x5904;&#xFF0C;&#x800C;&#x51CF;&#x5C11;&#x4E86;&#x666E;&#x901A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x65F6;&#x7684;&#x8D44;&#x6E90;&#x6D88;&#x8017;&#x3002;&#x5B8F;&#x4E0D;&#x662F;&#x51FD;&#x6570;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x524D;&#xFF08;&#x7F16;&#x8BD1;&#x9884;&#x5904;&#x7406;&#x9636;&#x6BB5;&#xFF09;&#x5C06;&#x7A0B;&#x5E8F;&#x4E2D;&#x6709;&#x5173;&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x6210;&#x5B8F;&#x4F53;&#x3002;</p>
+<p><code>inline</code>&#x51FD;&#x6570;&#x662F;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x5728;&#x7F16;&#x8BD1;&#x4E2D;&#x4E0D;&#x5355;&#x72EC;&#x4EA7;&#x751F;&#x4EE3;&#x7801;&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x6709;&#x5173;&#x4EE3;&#x7801;&#x5D4C;&#x5165;&#x5230;&#x8C03;&#x7528;&#x5904;&#x3002;</p>
+<p>&#x5185;&#x8054;&#x51FD;&#x6570;&#x8981;&#x505A;<strong>&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x68C0;&#x67E5;</strong>&#xFF0C;&#x76F8;&#x6BD4;&#x5B8F;&#x66F4;&#x52A0;&#x5B89;&#x5168;&#x53EF;&#x9760;&#xFF0C;&#x8FD9;&#x662F;&#x5185;&#x8054;&#x51FD;&#x6570;&#x8DDF;&#x5B8F;&#x76F8;&#x6BD4;&#x7684;&#x4F18;&#x52BF;&#x3002;</p>
+<pre><code class="lang-C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> f(x) x*x</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">double</span> x=<span class="hljs-number">2</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, f(x));
+}
+</code></pre>
+<pre><code class="lang-C++"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>{ <span class="hljs-keyword">return</span> x*x;}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">double</span> x = <span class="hljs-number">2</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, f(x));
+}
+</code></pre>
+<p>&#x8FD9;&#x4E24;&#x6BB5;&#x4EE3;&#x7801;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;warning&#xFF0C;&#x4F46;&#x7B2C;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x662F;&#x9519;&#x7684;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x7684;&#x5BF9;&#x7684;&#x3002;&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x56E0;&#x4E3A;&#x5B8F;&#x5B9A;&#x4E49;&#x4E0D;&#x4F1A;&#x505A;<strong>&#x7C7B;&#x578B;&#x68C0;&#x67E5;</strong>&#xFF0C;f(x)&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A;double&#x578B;&#x7684;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x7528;<code>%d</code>&#x6765;&#x6253;&#x5370;&#xFF0C;&#x7ED3;&#x679C;&#x80AF;&#x5B9A;&#x662F;&#x4E0D;&#x5BF9;&#x7684;&#xFF1B;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;x&#x662F;double&#x578B;&#xFF0C;&#x4F46;&#x51FD;&#x6570;<code>f</code>&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x662F;<code>int</code>&#x578B;&#xFF0C;&#x56E0;&#x6B64;&#x4F1A;&#x5148;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x540E;&#xFF0C;&#x518D;&#x8FDB;&#x884C;<code>x*x</code>&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<h5 id="5&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;">5&#x3001;&#x5185;&#x8054;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h5>
+<p>&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x4E0D;&#x7528;&#x5185;&#x8054;&#xFF08;&#x4F1A;&#x4EA7;&#x751F;&#x5927;&#x91CF;&#x7684;&#x5185;&#x5B58;&#x5F00;&#x9500;&#xFF09;&#xFF1A;</p>
+<ul>
+<li>&#x51FD;&#x6570;<strong>&#x5185;&#x5BB9;&#x592A;&#x591A;</strong></li>
+<li>&#x51FD;&#x6570;&#x5305;&#x542B;<strong>for&#x3001;while&#x3001;switch</strong>&#x8BED;&#x53E5;&#xFF0C;&#x5373;&#x51FD;&#x6570;&#x4E2D;&#x5305;&#x542B;<strong>&#x9012;&#x5F52;</strong>&#x3001;<strong>&#x5FAA;&#x73AF;</strong>&#x7B49;&#x3002;</li>
+</ul>
+<p>&#x4EE5;&#x4E0B;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x7528;&#x5185;&#x8054;&#xFF08;&#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x901F;&#x5EA6;&#xFF09;&#xFF1A;</p>
+<ul>
+<li>&#x51FD;&#x6570;&#x5185;&#x5BB9;<strong>10&#x884C;&#x4EE5;&#x5185;</strong>&#x4E14;<strong>&#x591A;&#x6B21;&#x8C03;&#x7528;</strong>&#x3002;</li>
+</ul>
+<h5 id="6&#x3001;&#x5C0F;&#x77E5;&#x8BC6;">6&#x3001;&#x5C0F;&#x77E5;&#x8BC6;</h5>
+<p>&#x51FD;&#x6570;<strong>&#x5185;&#x5BB9;&#x592A;&#x591A;</strong>&#xFF0C;&#x4E0D;&#x7BA1;&#x6709;&#x6CA1;&#x6709;&#x52A0;  <code>inline</code>&#xFF0C; &#x7F16;&#x8BD1;&#x5668;&#x90FD;&#x4E0D;&#x4F1A;&#x5C06;&#x5176;&#x7F16;&#x8BD1;&#x6210;&#x5185;&#x8054;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x5185;&#x8054;<code>inline</code>&#x53EA;&#x662F;<strong>&#x5EFA;&#x8BAE;&#x6027;</strong>&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x542C;&#x4F60;&#x7684;&#xFF0C;&#x4ED6;&#x80AF;&#x5B9A;&#x6BD4;&#x4F60;&#x66F4;&#x4E86;&#x89E3;&#x7F16;&#x8BD1;&#x540E;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#xFF0C;&#x800C;&#x6240;&#x8C13;&#x7684;&#x5185;&#x8054;&#x4E5F;&#x4E0D;&#x5355;&#x5355;&#x662F;&#x6307;<code>inline</code>&#x8FD9;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x4E86;&#xFF0C;&#x4ED6;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4E00;&#x79CD;<strong>&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x4F18;&#x5316;&#x65B9;&#x5F0F;</strong>&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="编码技巧.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 编码技巧">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"inline内联函数","level":"1.3.2","depth":2,"previous":{"title":"编码技巧","level":"1.3.1","depth":2,"path":"C++Skills/编码技巧.md","ref":"C++Skills/编码技巧.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"C++Skills/inline函数.md","mtime":"2021-09-29T08:19:22.042Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-29T08:19:25.522Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
