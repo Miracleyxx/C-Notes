@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>C++编码规范 · GitBook</title>
+        <title>优雅的释放指针 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="编码规范.html" />
+    <link rel="next" href="../c++11features/" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="READMD.html" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../c++code/">
             
-                <a href="./">
+                <a href="../c++code/">
             
                     
                     C++编码规范
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="编码规范.html">
+        <li class="chapter " data-level="1.2.1" data-path="../c++code/编码规范.html">
             
-                <a href="编码规范.html">
+                <a href="../c++code/编码规范.html">
             
                     
                     编码规范
@@ -134,9 +134,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../c++skills/READMD.html">
+        <li class="chapter " data-level="1.3" data-path="READMD.html">
             
-                <a href="../c++skills/READMD.html">
+                <a href="READMD.html">
             
                     
                     C++编码技巧
@@ -148,9 +148,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../c++skills/优雅的释放指针.html">
+        <li class="chapter active" data-level="1.3.1" data-path="优雅的释放指针.html">
             
-                <a href="../c++skills/优雅的释放指针.html">
+                <a href="优雅的释放指针.html">
             
                     
                     优雅的释放指针
@@ -228,7 +228,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >C++编码规范</a>
+        <a href=".." >优雅的释放指针</a>
     </h1>
 </div>
 
@@ -243,7 +243,35 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="c&#x7F16;&#x7801;&#x89C4;&#x8303;">C++&#x7F16;&#x7801;&#x89C4;&#x8303;</h1>
+                                <h1 id="&#x4F18;&#x96C5;&#x7684;&#x91CA;&#x653E;&#x6307;&#x9488;">&#x4F18;&#x96C5;&#x7684;&#x91CA;&#x653E;&#x6307;&#x9488;</h1>
+<p><strong>C&#x8BED;&#x8A00;&#x65F6;&#x4EE3;&#xFF1A;&#x4F7F;&#x7528;&#x7EDF;&#x4E00;&#x7684;&#x5B8F;&#x6765;&#x91CA;&#x653E;&#x6307;&#x9488;&#xFF08;&#x6CA1;&#x6709;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#xFF0C;&#x6709;&#x5371;&#x9669;&#xFF09;</strong></p>
+<pre><code class="lang-C"><span class="hljs-comment">// &#x5220;&#x9664;&#x6307;&#x9488;  </span>
+    <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SAFE_DELETE(p) {  </span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">NULL</span> != (p)) {   
+        <span class="hljs-built_in">free</span>((p));  
+        (p) = <span class="hljs-literal">NULL</span>;  
+    }
+}
+</code></pre>
+<p><strong>C++&#x65F6;&#x4EE3;&#xFF1A;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x6765;&#x64CD;&#x4F5C;&#x91CA;&#x653E;&#x6307;&#x9488;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x597D;&#x5904;&#x662F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x3002;</strong></p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// &#x5220;&#x9664;&#x6570;&#x7EC4;</span>
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">safe_delete_ptr</span><span class="hljs-params">(T *&amp;target)</span> </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">nullptr</span> != target) {
+        <span class="hljs-keyword">delete</span> target;
+        target = <span class="hljs-literal">nullptr</span>;
+    }
+}
+
+<span class="hljs-comment">// &#x5220;&#x9664;&#x6570;&#x7EC4;&#x6307;&#x9488;</span>
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">safe_delete_arr_ptr</span><span class="hljs-params">(T *&amp;target)</span> </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">nullptr</span> != target) {
+        <span class="hljs-keyword">delete</span>[] target;
+        target = <span class="hljs-literal">nullptr</span>;
+    }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -271,12 +299,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: C++笔记">
+                <a href="READMD.html" class="navigation navigation-prev " aria-label="Previous page: C++编码技巧">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="编码规范.html" class="navigation navigation-next " aria-label="Next page: 编码规范">
+                <a href="../c++11features/" class="navigation navigation-next " aria-label="Next page: C++11新特性">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -287,7 +315,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"C++编码规范","level":"1.2","depth":1,"next":{"title":"编码规范","level":"1.2.1","depth":2,"path":"c++code/编码规范.md","ref":"c++code/编码规范.md","articles":[]},"previous":{"title":"C++笔记","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c++code/README.md","mtime":"2021-09-29T09:00:24.912Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-29T09:47:26.392Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"优雅的释放指针","level":"1.3.1","depth":2,"next":{"title":"C++11新特性","level":"1.4","depth":1,"path":"c++11features/README.md","ref":"c++11features/README.md","articles":[{"title":"inline内联函数","level":"1.4.1","depth":2,"path":"c++11features/inline函数.md","ref":"c++11features/inline函数.md","articles":[]}]},"previous":{"title":"C++编码技巧","level":"1.3","depth":1,"path":"c++skills/READMD.md","ref":"c++skills/READMD.md","articles":[{"title":"优雅的释放指针","level":"1.3.1","depth":2,"path":"c++skills/优雅的释放指针.md","ref":"c++skills/优雅的释放指针.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c++skills/优雅的释放指针.md","mtime":"2021-09-29T09:46:13.367Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-29T09:47:26.392Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
