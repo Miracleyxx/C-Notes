@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>编码规范 · GitBook</title>
+        <title>头文件包含顺序 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../c++skills/READMD.html" />
+    <link rel="next" href="编码命名规范.html" />
     
     
     <link rel="prev" href="./" />
@@ -116,12 +116,38 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="编码规范.html">
+        <li class="chapter active" data-level="1.2.1" data-path="头文件包含顺序.html">
             
-                <a href="编码规范.html">
+                <a href="头文件包含顺序.html">
             
                     
-                    编码规范
+                    头文件包含顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="编码命名规范.html">
+            
+                <a href="编码命名规范.html">
+            
+                    
+                    编码命名规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="类声明顺序.html">
+            
+                <a href="类声明顺序.html">
+            
+                    
+                    类声明顺序
             
                 </a>
             
@@ -134,9 +160,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../c++skills/READMD.html">
+        <li class="chapter " data-level="1.3" data-path="../c++skills/">
             
-                <a href="../c++skills/READMD.html">
+                <a href="../c++skills/">
             
                     
                     C++编码技巧
@@ -228,7 +254,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >编码规范</a>
+        <a href=".." >头文件包含顺序</a>
     </h1>
 </div>
 
@@ -243,8 +269,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="c&#x7F16;&#x7801;&#x89C4;&#x8303;">C++&#x7F16;&#x7801;&#x89C4;&#x8303;</h1>
-<h4 id="&#x4E00;&#x3001;c&#x5934;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x7684;&#x540D;&#x79F0;&#x548C;&#x987A;&#x5E8F;">&#x4E00;&#x3001;C++&#x5934;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x7684;&#x540D;&#x79F0;&#x548C;&#x987A;&#x5E8F;</h4>
+                                <h1 id="c&#x5934;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x987A;&#x5E8F;">C++&#x5934;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x987A;&#x5E8F;</h1>
 <h5 id="1google&#x89C4;&#x8303;&#x5934;&#x6587;&#x4EF6;&#x7684;&#x5305;&#x542B;&#x987A;&#x5E8F;">1.<code>google</code>&#x89C4;&#x8303;&#x5934;&#x6587;&#x4EF6;&#x7684;&#x5305;&#x542B;&#x987A;&#x5E8F;</h5>
 <p>&#x76F8;&#x5173;&#x5934;&#x6587;&#x4EF6;&#x3001;C&#x7CFB;&#x7EDF;&#x5934;&#x6587;&#x4EF6;&#x3001;C++&#x6807;&#x51C6;&#x5E93;&#x5934;&#x6587;&#x4EF6;&#x3001;&#x5176;&#x4ED6;&#x5E93;&#x5934;&#x6587;&#x4EF6;&#x3001;&#x9879;&#x76EE;&#x7684;&#x5934;&#x6587;&#x4EF6;</p>
 <p>&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x90FD;&#x5E94;&#x8BE5;&#x4F5C;&#x4E3A;&#x9879;&#x76EE;&#x6E90;&#x76EE;&#x5F55;&#x7684;&#x540E;&#x4EE3;&#x5217;&#x51FA;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;<code>project/src/server/server.h</code>&#x5E94;&#x5305;&#x62EC;&#x4E3A;</p>
@@ -283,56 +308,6 @@
 </code></pre>
 </li>
 </ul>
-<h4 id="&#x4E8C;&#x3001;&#x7F16;&#x7801;&#x547D;&#x540D;&#x89C4;&#x8303;">&#x4E8C;&#x3001;&#x7F16;&#x7801;&#x547D;&#x540D;&#x89C4;&#x8303;</h4>
-<h5 id="1&#x3001;&#x6587;&#x4EF6;&#x547D;&#x540D;">1&#x3001;&#x6587;&#x4EF6;&#x547D;&#x540D;</h5>
-<p>&#x6587;&#x4EF6;&#x540D;&#x5168;&#x90E8;&#x90FD;&#x8981;&#x7528;&#x5C0F;&#x5199;&#x5E76;&#x4E14;&#x5305;&#x542B;&#x4E0B;&#x5212;&#x7EBF;_</p>
-<p>&#x6B63;&#x786E;&#x7684;&#x547D;&#x540D;&#x89C4;&#x8303;&#x793A;&#x4F8B;:</p>
-<ul>
-<li><code>my_test_file.h</code></li>
-<li><code>my_test_file.cc</code></li>
-</ul>
-<p>C++&#x6587;&#x4EF6;&#x8981;&#x4EE5;.cc&#x7ED3;&#x5C3E;&#xFF0C;&#x5934;&#x6587;&#x4EF6;.h&#x7ED3;&#x5C3E;&#x3002;</p>
-<h5 id="2&#x3001;&#x7C7B;&#x578B;&#x547D;&#x540D;">2&#x3001;&#x7C7B;&#x578B;&#x547D;&#x540D;</h5>
-<p>&#x7C7B;&#x578B;&#xFF08;&#x5305;&#x62EC;&#x7ED3;&#x6784;&#x4F53;&#x540D;&#x3001;&#x7C7B;&#x540D;&#x3001;&#x679A;&#x4E3E;&#x7C7B;&#x540D;&#xFF09;&#x547D;&#x540D;&#x91C7;&#x7528;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x5F0F;&#xFF0C;&#x5355;&#x8BCD;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x4E0B;&#x5212;&#x7EBF;&#xFF1A;<code>MyBook.</code></p>
-<h5 id="3&#x3001;&#x53D8;&#x91CF;&#x547D;&#x540D;">3&#x3001;&#x53D8;&#x91CF;&#x547D;&#x540D;</h5>
-<ul>
-<li><p>&#x666E;&#x901A;&#x53D8;&#x91CF;&#x547D;&#x540D;&#xFF08;&#x7ED3;&#x6784;&#x4F53;&#x547D;&#x540D;&#xFF09;</p>
-<p>&#x5355;&#x8BCD;&#x5168;&#x5C0F;&#x5199;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4E0B;&#x5212;&#x7EBF;_&#x9694;&#x5F00;&#xFF0C;&#x548C;&#x6587;&#x4EF6;&#x547D;&#x540D;&#x7C7B;&#x4F3C;&#xFF0C;&#x547D;&#x540D;&#x8981;&#x6C42;&#x6E05;&#x6670;&#x660E;&#x786E;</p>
-<ul>
-<li><code>string table_name</code></li>
-<li><code>string user_name_read</code></li>
-</ul>
-</li>
-<li><p>&#x7C7B;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
-<ul>
-<li><p>&#x7C7B;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x524D;&#x9762;&#x52A0; <code>m_</code>&#x5F00;&#x5934;</p>
-</li>
-<li><p>m_ &#xFF1A; &#x7C7B;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
-</li>
-<li><p>ms_&#xFF1A;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
-</li>
-<li><p>s_ &#xFF1A;&#x9759;&#x6001;&#x5168;&#x5C40;&#x53D8;&#x91CF;</p>
-</li>
-<li><p>g_ &#xFF1A;&#x666E;&#x901A;&#x5168;&#x5C40;&#x53D8;&#x91CF;</p>
-</li>
-</ul>
-</li>
-<li><p>&#x5E38;&#x4EAE;&#x547D;&#x540D;</p>
-<p>&#x58F0;&#x660E;&#x4E3A; <code>constexpr</code> &#x6216; <code>const</code>&#x4FEE;&#x9970;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x503C;&#x59CB;&#x7EC8;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x7684;&#xFF0C;&#x547D;&#x540D;&#x65F6;&#x4EE5;&quot;k&quot;&#x5F00;&#x5934;&#xFF0C;&#x540E;&#x9762;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#xFF0C;&#x5927;&#x5C0F;&#x5199;&#x6DF7;&#x5199;&#x3002;</p>
-<ul>
-<li><code>const int kTableNum = 9</code></li>
-</ul>
-</li>
-</ul>
-<h5 id="4&#x3001;&#x51FD;&#x6570;&#x547D;&#x540D;">4&#x3001;&#x51FD;&#x6570;&#x547D;&#x540D;</h5>
-<p>&#x51FD;&#x6570;&#x547D;&#x540D;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x4E0B;&#x5212;&#x7EBF;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>MyExcitingFunction()</code></p>
-<p><code>set</code> &#x548C; <code>get</code>&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x548C;&#x53D8;&#x91CF;&#x540D;&#x4FDD;&#x6301;&#x4E00;&#x81F4;</p>
-<ul>
-<li><code>set_table_num();</code></li>
-<li><code>get_table_num();</code></li>
-</ul>
-<h5 id="5&#x3001;&#x5B8F;&#x547D;&#x540D;">5&#x3001;&#x5B8F;&#x547D;&#x540D;</h5>
-<p>&#x5B8F;&#x547D;&#x540D;&#x5E94;&#x8BE5;&#x5168;&#x90E8;&#x5927;&#x5199;&#x5E76;&#x4E14;&#x7528;&#x4E0B;&#x5212;&#x7EBF;_&#x5206;&#x5272;</p>
 <h4 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h4>
 <ul>
 <li><code>https://google.github.io/styleguide/cppguide.html</code></li>
@@ -369,7 +344,7 @@
                 </a>
                 
                 
-                <a href="../c++skills/READMD.html" class="navigation navigation-next " aria-label="Next page: C++编码技巧">
+                <a href="编码命名规范.html" class="navigation navigation-next " aria-label="Next page: 编码命名规范">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -380,7 +355,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"编码规范","level":"1.2.1","depth":2,"next":{"title":"C++编码技巧","level":"1.3","depth":1,"path":"c++skills/READMD.md","ref":"c++skills/READMD.md","articles":[{"title":"优雅的释放指针","level":"1.3.1","depth":2,"path":"c++skills/优雅的释放指针.md","ref":"c++skills/优雅的释放指针.md","articles":[]}]},"previous":{"title":"C++编码规范","level":"1.2","depth":1,"path":"c++code/README.md","ref":"c++code/README.md","articles":[{"title":"编码规范","level":"1.2.1","depth":2,"path":"c++code/编码规范.md","ref":"c++code/编码规范.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c++code/编码规范.md","mtime":"2021-09-29T09:00:24.916Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-29T09:47:26.392Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"头文件包含顺序","level":"1.2.1","depth":2,"next":{"title":"编码命名规范","level":"1.2.2","depth":2,"path":"c++code/编码命名规范.md","ref":"c++code/编码命名规范.md","articles":[]},"previous":{"title":"C++编码规范","level":"1.2","depth":1,"path":"c++code/README.md","ref":"c++code/README.md","articles":[{"title":"头文件包含顺序","level":"1.2.1","depth":2,"path":"c++code/头文件包含顺序.md","ref":"c++code/头文件包含顺序.md","articles":[]},{"title":"编码命名规范","level":"1.2.2","depth":2,"path":"c++code/编码命名规范.md","ref":"c++code/编码命名规范.md","articles":[]},{"title":"类声明顺序","level":"1.2.3","depth":2,"path":"c++code/类声明顺序.md","ref":"c++code/类声明顺序.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c++code/头文件包含顺序.md","mtime":"2021-09-30T02:41:31.624Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-30T08:38:26.594Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

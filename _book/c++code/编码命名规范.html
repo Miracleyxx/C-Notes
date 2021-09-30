@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>C++编码规范 · GitBook</title>
+        <title>编码命名规范 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="头文件包含顺序.html" />
+    <link rel="next" href="类声明顺序.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="头文件包含顺序.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -129,7 +129,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="编码命名规范.html">
+        <li class="chapter active" data-level="1.2.2" data-path="编码命名规范.html">
             
                 <a href="编码命名规范.html">
             
@@ -254,7 +254,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >C++编码规范</a>
+        <a href=".." >编码命名规范</a>
     </h1>
 </div>
 
@@ -269,7 +269,57 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="c&#x7F16;&#x7801;&#x89C4;&#x8303;">C++&#x7F16;&#x7801;&#x89C4;&#x8303;</h1>
+                                <h1 id="&#x7F16;&#x7801;&#x547D;&#x540D;&#x89C4;&#x8303;">&#x7F16;&#x7801;&#x547D;&#x540D;&#x89C4;&#x8303;</h1>
+<h5 id="1&#x3001;&#x6587;&#x4EF6;&#x547D;&#x540D;">1&#x3001;&#x6587;&#x4EF6;&#x547D;&#x540D;</h5>
+<p>&#x6587;&#x4EF6;&#x540D;&#x5168;&#x90E8;&#x90FD;&#x8981;&#x7528;&#x5C0F;&#x5199;&#x5E76;&#x4E14;&#x5305;&#x542B;&#x4E0B;&#x5212;&#x7EBF;_</p>
+<p>&#x6B63;&#x786E;&#x7684;&#x547D;&#x540D;&#x89C4;&#x8303;&#x793A;&#x4F8B;:</p>
+<ul>
+<li><code>my_test_file.h</code></li>
+<li><code>my_test_file.cc</code></li>
+</ul>
+<p>C++&#x6587;&#x4EF6;&#x8981;&#x4EE5;.cc&#x7ED3;&#x5C3E;&#xFF0C;&#x5934;&#x6587;&#x4EF6;.h&#x7ED3;&#x5C3E;&#x3002;</p>
+<h5 id="2&#x3001;&#x7C7B;&#x578B;&#x547D;&#x540D;">2&#x3001;&#x7C7B;&#x578B;&#x547D;&#x540D;</h5>
+<p>&#x7C7B;&#x578B;&#xFF08;&#x5305;&#x62EC;&#x7ED3;&#x6784;&#x4F53;&#x540D;&#x3001;&#x7C7B;&#x540D;&#x3001;&#x679A;&#x4E3E;&#x7C7B;&#x540D;&#xFF09;&#x547D;&#x540D;&#x91C7;&#x7528;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x5F0F;&#xFF0C;&#x5355;&#x8BCD;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x4E0B;&#x5212;&#x7EBF;&#xFF1A;<code>MyBook.</code></p>
+<h5 id="3&#x3001;&#x53D8;&#x91CF;&#x547D;&#x540D;">3&#x3001;&#x53D8;&#x91CF;&#x547D;&#x540D;</h5>
+<ul>
+<li><p>&#x666E;&#x901A;&#x53D8;&#x91CF;&#x547D;&#x540D;&#xFF08;&#x7ED3;&#x6784;&#x4F53;&#x547D;&#x540D;&#xFF09;</p>
+<p>&#x5355;&#x8BCD;&#x5168;&#x5C0F;&#x5199;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4E0B;&#x5212;&#x7EBF;_&#x9694;&#x5F00;&#xFF0C;&#x548C;&#x6587;&#x4EF6;&#x547D;&#x540D;&#x7C7B;&#x4F3C;&#xFF0C;&#x547D;&#x540D;&#x8981;&#x6C42;&#x6E05;&#x6670;&#x660E;&#x786E;</p>
+<ul>
+<li><code>string table_name</code></li>
+<li><code>string user_name_read</code></li>
+</ul>
+</li>
+<li><p>&#x7C7B;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>&#x7C7B;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x666E;&#x901A;&#x53D8;&#x91CF;&#x76F8;&#x4F3C;&#xFF0C;&#x4F46;&#x5728;&#x53D8;&#x91CF;&#x540D;&#x540E;&#x52A0;&#xFF08;_&#xFF09;</p>
+<ul>
+<li><code>string table_name_</code></li>
+</ul>
+</li>
+<li><p>&#x5E38;&#x4EAE;&#x547D;&#x540D;</p>
+<p>&#x58F0;&#x660E;&#x4E3A; <code>constexpr</code> &#x6216; <code>const</code>&#x4FEE;&#x9970;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x503C;&#x59CB;&#x7EC8;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x7684;&#xFF0C;&#x547D;&#x540D;&#x65F6;&#x4EE5;&quot;k&quot;&#x5F00;&#x5934;&#xFF0C;&#x540E;&#x9762;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#xFF0C;&#x5927;&#x5C0F;&#x5199;&#x6DF7;&#x5199;&#x3002;</p>
+<ul>
+<li><code>const int kTableNum = 9</code></li>
+</ul>
+</li>
+<li><p>&#x5168;&#x5C40;&#x53D8;&#x91CF;</p>
+<ul>
+<li><code>string g_system_time</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="4&#x3001;&#x51FD;&#x6570;&#x547D;&#x540D;">4&#x3001;&#x51FD;&#x6570;&#x547D;&#x540D;</h5>
+<p>&#x51FD;&#x6570;&#x547D;&#x540D;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x4E0B;&#x5212;&#x7EBF;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>MyExcitingFunction()</code></p>
+<p><code>set</code> &#x548C; <code>get</code>&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x548C;&#x53D8;&#x91CF;&#x540D;&#x4FDD;&#x6301;&#x4E00;&#x81F4;</p>
+<ul>
+<li><code>set_table_num();</code></li>
+<li><code>get_table_num();</code></li>
+</ul>
+<h5 id="5&#x3001;&#x5B8F;&#x547D;&#x540D;">5&#x3001;&#x5B8F;&#x547D;&#x540D;</h5>
+<p>&#x5B8F;&#x547D;&#x540D;&#x5E94;&#x8BE5;&#x5168;&#x90E8;&#x5927;&#x5199;&#x5E76;&#x4E14;&#x7528;&#x4E0B;&#x5212;&#x7EBF;_&#x5206;&#x5272;</p>
+<h4 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h4>
+<ul>
+<li><code>https://google.github.io/styleguide/cppguide.html</code></li>
+</ul>
 
                                 
                                 </section>
@@ -297,12 +347,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: C++笔记">
+                <a href="头文件包含顺序.html" class="navigation navigation-prev " aria-label="Previous page: 头文件包含顺序">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="头文件包含顺序.html" class="navigation navigation-next " aria-label="Next page: 头文件包含顺序">
+                <a href="类声明顺序.html" class="navigation navigation-next " aria-label="Next page: 类声明顺序">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -313,7 +363,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"C++编码规范","level":"1.2","depth":1,"next":{"title":"头文件包含顺序","level":"1.2.1","depth":2,"path":"c++code/头文件包含顺序.md","ref":"c++code/头文件包含顺序.md","articles":[]},"previous":{"title":"C++笔记","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c++code/README.md","mtime":"2021-09-29T09:00:24.912Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-30T08:38:26.594Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"编码命名规范","level":"1.2.2","depth":2,"next":{"title":"类声明顺序","level":"1.2.3","depth":2,"path":"c++code/类声明顺序.md","ref":"c++code/类声明顺序.md","articles":[]},"previous":{"title":"头文件包含顺序","level":"1.2.1","depth":2,"path":"c++code/头文件包含顺序.md","ref":"c++code/头文件包含顺序.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c++code/编码命名规范.md","mtime":"2021-09-30T03:17:06.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-09-30T08:38:26.594Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
